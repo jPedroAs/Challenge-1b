@@ -13,7 +13,7 @@ fun main()
     var txtFormat = ArrayList<String>()
     var create: File = File("teste.out")
     var media: Float = 0f;
-    var mTxt = File("samples/measurements.txt");
+    var mTxt = File("measurements-10000-unique-keys.txt");
     val dic = hashMapOf<String,ArrayList<String>>();
 
     mTxt.bufferedReader().useLines{ 
@@ -29,7 +29,7 @@ fun main()
     dic.forEach{ l ->
         vle.clear();
         l.value.forEach{
-            media = (media + it.toFloat())
+            media = media + it.toFloat()
             media = media / it.count();
             vle.add(it);
         }
